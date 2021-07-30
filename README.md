@@ -9,4 +9,9 @@
  <a href="#autor">Autor</a> <br>
 </p>
 
+#Objetivo
+
+<p id="objetivo"> Retornar uma listagem de Pokémons e seus tipos, e para cada tipo um hexadecimal de cor
+correspondente.  </p>
+
 ![Alt Text](https://i.ibb.co/6DMpCST/apiBFF.gif)
