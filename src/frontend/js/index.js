@@ -7,12 +7,10 @@ const PokeApi = {
             return response.json();
         }).then(response => {
             PokeApi.mountElement(response.results)
-            console.log('PokeApi.init();');
         })
 
     },
     mountElement: (response) => {
-        console.log('mount', typeof (response));
 
         response.map(item => {
             var name = item.name;
@@ -34,7 +32,6 @@ const PokeApi = {
             fetch(url).then(response => {
                 return response.json();
             }).then(response => {
-                console.log(response);
                 PokeApi.mountPokemonInfo(response);
             });
 
@@ -68,8 +65,6 @@ const PokeApi = {
 
             obj.name = name;
             obj.color = cor.color;
-            console.log('obj', obj);
-            console.log('cor', cor);
             return arrayTypes.push(cor[0]);
         })
 
@@ -77,7 +72,6 @@ const PokeApi = {
 
 
 
-        // console.log('cor', cor);
         api_data.name = name;
         api_data.types = arrayTypes;
         
@@ -92,7 +86,6 @@ const PokeApi = {
 
         types.map(item => {
             var tipos = `${item.name} + `
-            console.log(tipos);
             $('ul li.tipo').text(`Tipo: ${tipos}`)
         })
 
