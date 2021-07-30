@@ -12,7 +12,7 @@ const PokeApi = {
 
     },
     mountElement: (response) => {
-        console.log('mount', typeof(response));
+        console.log('mount', typeof (response));
 
         response.map(item => {
             var name = item.name;
@@ -40,19 +40,67 @@ const PokeApi = {
 
         });
 
-    }, 
+    },
     mountPokemonInfo: (response) => {
-        const img = response.sprites.front_default,
-        name = response.name;
+        var img = response.sprites.front_default,
+            types = response.types,
+            name = response.name;
 
         $('.place-pokemons--img img').attr('src', img);
-        $('ul li.name').text(name)
 
         fetch('http://localhost:3038').then(response => {
             return response.json()
         }).then(response => {
-            console.log(response);
+            PokeApi.mountBffApi(response, name, types);
         })
+    }, mountBffApi: (colors, name, types) => {
+        var api_data = {},
+            arrayTypes = [];
+
+
+
+        types.map(item => {
+            var obj = {};
+            var name = item.type.name;
+            var cor = colors.colors.filter(cor => {
+                return cor.name == name
+            })
+
+            obj.name = name;
+            obj.color = cor.color;
+            console.log('obj', obj);
+            console.log('cor', cor);
+            return arrayTypes.push(cor[0]);
+        })
+
+
+
+
+
+        // console.log('cor', cor);
+        api_data.name = name;
+        api_data.types = arrayTypes;
+        
+        console.log('api_data', api_data);
+
+        PokeApi.mountInfo(api_data);
+
+
+    }, mountInfo: (api_data) => {
+        var name = api_data.name,
+        types = api_data.types;
+
+        types.map(item => {
+            var tipos = `${item.name} + `
+            console.log(tipos);
+            $('ul li.tipo').text(`Tipo: ${tipos}`)
+        })
+
+
+
+        $('ul li.name').text(`Nome: ${name}`)
+        $('ul li.color').text(`Tipo: ${api_data.types[0].color}`)
+
     }
 }
 
