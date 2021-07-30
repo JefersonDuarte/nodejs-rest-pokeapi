@@ -8,19 +8,40 @@ main {
     background: #e6e6e6;
 }
 
+#pokemons, .pokemons{
+    text-transform: capitalize;
+}
+
 body > main > section {
     display: flex;
     margin: 20px auto;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     width: max-content;
     border-radius: 25px;
-    padding: 0 15px;
+    padding: 15px;
+    align-items: center;
 }
 
-body > main > section > div.place-pokemons--info > ul{
+body > main > section > div.place-pokemons--img {
+    background: #fff;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    height: -30%;
+    align-items: center;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+body > main > section > div.place-pokemons--info > ul {
     list-style: none;
     font-weight: bold;
     background: #fff;
     padding: 5px;
     border-radius: 5px;
+}
+
+body > main > section > div.place-pokemons--info > ul li:not(.color) {
+    text-transform: capitalize;
 }

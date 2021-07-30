@@ -3,11 +3,16 @@ const PokeApi = {
         PokeApi.getDataPokeApi();
     },
     getDataPokeApi: () => {
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=100').then(response => {
-            return response.json();
-        }).then(response => {
-            PokeApi.mountElement(response.results)
-        })
+        try {
+            fetch('https://pokeapi.co/api/v2/pokemon?limit=100').then(response => {
+                return response.json();
+            }).then(response => {
+                PokeApi.mountElement(response.results)
+            })
+
+        } catch (error) {
+            console.log(error);
+        }
 
     },
     mountElement: (response) => {
@@ -30,11 +35,16 @@ const PokeApi = {
                 url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
             if (id.length > 0) {
-                fetch(url).then(response => {
-                    return response.json();
-                }).then(response => {
-                    PokeApi.mountPokemonInfo(response);
-                });
+                try {
+                    fetch(url).then(response => {
+                        return response.json();
+                    }).then(response => {
+                        PokeApi.mountPokemonInfo(response);
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+
             }
 
 
@@ -48,11 +58,16 @@ const PokeApi = {
 
         $('.place-pokemons--img img').attr('src', img);
 
-        fetch('http://localhost:3038').then(response => {
-            return response.json()
-        }).then(response => {
-            PokeApi.mountBffApi(response, name, types);
-        })
+        try {
+            fetch('http://localhost:3038').then(response => {
+                return response.json()
+            }).then(response => {
+                PokeApi.mountBffApi(response, name, types);
+            })
+        } catch (error) {
+            console.log('Problema com a API de cores!', error);
+        }
+
     }, mountBffApi: (colors, name, types) => {
         var api_data = {},
             arrayTypes = [];
@@ -72,7 +87,7 @@ const PokeApi = {
         api_data.name = name;
         api_data.types = arrayTypes;
 
-        console.log('api_data', api_data);
+        console.log('api_data_BFF', api_data);
 
         PokeApi.mountInfo(api_data);
 
@@ -91,7 +106,7 @@ const PokeApi = {
 
         $('ul li.name').text(`Nome: ${name}`)
         $('ul li.tipo').text(`Tipo: ${tipos.join(' - ')}`);
-        $('ul li.color').text(`Cor: ${cores.join(' - ')}`);
+        $('ul li.color').text(`Cor: ${(cores.join(' - ')).toUpperCase()}`);
         $('.place-pokemons').css('background-color', types[0].color)
 
     }
