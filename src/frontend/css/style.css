@@ -43,7 +43,7 @@ body > main > section > div.place-pokemons--info > ul {
 }
 
 body > main > section > div.place-pokemons--info > ul li {
-    margin: 4px 0 ;
+    margin: 8px 0 ;
 }
 
 body > main > section > div.place-pokemons--info > ul li:not(.color) {
