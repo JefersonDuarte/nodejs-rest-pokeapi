@@ -1,5 +1,6 @@
 body {
     background: #e6e6e6;
+    font-family: sans-serif;
 }
 
 main {
@@ -19,7 +20,6 @@ body > main > section {
 body > main > section > div.place-pokemons--info > ul{
     list-style: none;
     font-weight: bold;
-    font-family: sans-serif;
     background: #fff;
     padding: 5px;
     border-radius: 5px;
