@@ -16,7 +16,7 @@ correspondente.  </p>
 
 # Como executar
 
-<p id="roadmap"> Para rodar esta aplicação, basta acessar por qualquer terminal a página <b> backend </b>, executar o comando <i> `npm i` </i> e logo após isso o comando <i> `node server.js` </i> e abrir o arquivo <b> index.html </b> na pasta <b> frontend </b> <br /> O retorno da API BFF pode ser observado no console assim que o Pokemón é selecionado</p>
+<p id="roadmap"> Para rodar esta aplicação, basta acessar por qualquer terminal a página <b> backend </b>, executar o comando <i> `npm i` </i> e logo após isso o comando <i> `node server.js` </i> e abrir o arquivo <b> index.html </b> na pasta <b> frontend </b>. <br /> O retorno da API BFF pode ser observado no console assim que o Pokemón é selecionado</p>
 
 
 # Tecnologias
