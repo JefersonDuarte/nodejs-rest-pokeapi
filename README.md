@@ -1,6 +1,6 @@
 # nodejs-rest-pokeapi
 
-<p align="center">
+<p>
  <a href="#objetivo">Objetivo</a> • <br>
   <a href="#tecnologias">Tecnologias</a> •   <br>
  <a href="#roadmap">Como executar</a> •   <br>
