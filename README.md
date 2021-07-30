@@ -25,4 +25,4 @@ correspondente.  </p>
 
 # Autor
 
-<p id="autor"> <b> <a href="https://github.com/JefersonDuarte" > Jeferson Duarte de Oliveira </a> </b> </p>
+<p id="autor"> <b> <a href="https://github.com/JefersonDuarte" target="_blank" > Jeferson Duarte de Oliveira </a> </b> </p>
