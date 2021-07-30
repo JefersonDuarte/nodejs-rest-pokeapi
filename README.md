@@ -18,4 +18,4 @@ correspondente.  </p>
 
 # Como executar
 
-<p id="roadmap"> Para rodar esta aplicação, basta acessar a página <b> Backend </b> e executar o comando <i> node server.js </i> e abrir o arquivo <b> index.html </b> na pasta <b> frontend </b>  </p>
+<p id="roadmap"> Para rodar esta aplicação, basta acessar a página <b> Backend </b>, executar o comando <i> `node server.js` </i> e abrir o arquivo <b> index.html </b> na pasta <b> frontend </b>  </p>
