@@ -29,11 +29,14 @@ const PokeApi = {
             var id = $(this).find(":selected").val(),
                 url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
-            fetch(url).then(response => {
-                return response.json();
-            }).then(response => {
-                PokeApi.mountPokemonInfo(response);
-            });
+            if (id.length > 0) {
+                fetch(url).then(response => {
+                    return response.json();
+                }).then(response => {
+                    PokeApi.mountPokemonInfo(response);
+                });
+            }
+
 
         });
 
@@ -54,8 +57,6 @@ const PokeApi = {
         var api_data = {},
             arrayTypes = [];
 
-
-
         types.map(item => {
             var obj = {};
             var name = item.type.name;
@@ -68,13 +69,9 @@ const PokeApi = {
             return arrayTypes.push(cor[0]);
         })
 
-
-
-
-
         api_data.name = name;
         api_data.types = arrayTypes;
-        
+
         console.log('api_data', api_data);
 
         PokeApi.mountInfo(api_data);
@@ -82,17 +79,20 @@ const PokeApi = {
 
     }, mountInfo: (api_data) => {
         var name = api_data.name,
-        types = api_data.types;
+            types = api_data.types;
 
-        types.map(item => {
-            var tipos = `${item.name} + `
-            $('ul li.tipo').text(`Tipo: ${tipos}`)
-        })
+        var tipos = types.map(item => {
+            return item.name
+        });
 
-
+        var cores = types.map(item => {
+            return item.color
+        });
 
         $('ul li.name').text(`Nome: ${name}`)
-        $('ul li.color').text(`Tipo: ${api_data.types[0].color}`)
+        $('ul li.tipo').text(`Tipo: ${tipos.join(' - ')}`);
+        $('ul li.color').text(`Cor: ${cores.join(' - ')}`);
+        $('.place-pokemons').css('background-color', types[0].color)
 
     }
 }

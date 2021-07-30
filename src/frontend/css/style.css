@@ -1,3 +1,26 @@
 body {
-    background: #fefefe;
+    background: #e6e6e6;
+}
+
+main {
+    text-align: center;
+    background: #e6e6e6;
+}
+
+body > main > section {
+    display: flex;
+    margin: 20px auto;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    border-radius: 25px;
+    padding: 0 15px;
+}
+
+body > main > section > div.place-pokemons--info > ul{
+    list-style: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
 }
