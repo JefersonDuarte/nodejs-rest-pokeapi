@@ -8,3 +8,5 @@
  <a href="#licenc-a">Licença</a> • 
  <a href="#autor">Autor</a>
 </p>
+
+![Alt Text](https://i.ibb.co/6DMpCST/apiBFF.gif)
